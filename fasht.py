@@ -25,6 +25,11 @@ def h(data: str) -> str:
     for arg in table:
         result += hex(arg >> 2)[-1]
 
+    if len(result) > 32:
+        result = result[0:32]
+    else:
+        h(result)
+
     return result
 
 
